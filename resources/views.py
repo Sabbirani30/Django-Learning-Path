@@ -8,4 +8,7 @@ def Physics(request):
 def Chemistry(request):
     return render(request, 'resources/freeresources.html', {'chem': 2})
 def Biology(request):
-   return render(request, 'resources/blog.html')
+   return render(request, 'resources/blog.html',{'fcrs':5, 'Anik':"Future Big Thing"})
+def Big_Data(request):
+    Available_Courses = {'fcourses': ["Math", "Physics", "Chemistry", "Biology"]}
+    return render(request, 'resources/Big_Data.html',  Available_Courses)

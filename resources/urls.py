@@ -9,5 +9,6 @@ urlpatterns = [
     path('math/', views.Math),
     path('phy/', views.Physics),
     path('chem/', views.Chemistry),
+    path('bd/', views.Big_Data),
     
    ]
