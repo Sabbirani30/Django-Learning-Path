@@ -13,3 +13,6 @@ def course  (request):
     return render(request, 'courses/freecourses.html',free_courses)
 def Mahdi_Sir (request):
     return render(request, 'courses/freecourses.html')
+
+def Data_Analysis (request):
+    return render(request, 'courses/Data_Analysis.html')
