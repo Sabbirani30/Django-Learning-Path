@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(180, 139, 166);
+}
+
+.text{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+}
+
+#text{
+    color: rgb(151, 58, 58);
+    font-size: 30px;
+    text-align: center;
+}
+
+.tproperty{
+    color: rgb(39, 37, 37);
+    font-size: 30px;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+
+}
+
+.margin{
+    margin: 50px;
+    
+    height: 100px;
+    width: 500px;
+    border: 2px solid rgb(0, 0, 0);
+    align-content: center;
+
+
+}
+
+.padding{
+    padding: 50px;
+   
+    height: 100px;
+    width: 500px;
+    border: 2px solid rgb(0, 0, 0);
+    align-content: center;
+}
