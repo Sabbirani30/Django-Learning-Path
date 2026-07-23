@@ -16,3 +16,7 @@ def Mahdi_Sir (request):
 
 def Data_Analysis (request):
     return render(request, 'courses/Data_Analysis.html')
+
+def Artificial_Intelligence (request):
+    return render(request, 'courses/AI.html')
+    
