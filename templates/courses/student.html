@@ -1,0 +1,24 @@
+{% if students %}
+
+    <table border="1" width="100%">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Department</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.Student_ID }}</td>
+            <td>{{ student.Name }}</td>
+            <td>{{ student.Email }}</td>
+            <td>{{ student.Age }}</td>
+            <td>{{ student.Department }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% else %}
+    <p>No students found.</p>
+{% endif %}

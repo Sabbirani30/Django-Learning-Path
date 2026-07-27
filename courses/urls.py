@@ -10,6 +10,7 @@ urlpatterns = [
     path('course/', views.course),
     path('mahdi/', views.Mahdi_Sir),
     path('data_analysis/', views.Data_Analysis),
-    path('ai/', views.Artificial_Intelligence)
+    path('ai/', views.Artificial_Intelligence),
+    path('student/', views.Student_Info),
     
    ]

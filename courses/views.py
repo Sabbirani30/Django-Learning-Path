@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import Student
 
 # Create your views here.
 def Sabbir (request):
@@ -19,4 +20,8 @@ def Data_Analysis (request):
 
 def Artificial_Intelligence (request):
     return render(request, 'courses/AI.html')
+
+def Student_Info (request):
+    studentdetails=Student.objects.all()
+    return render(request, 'courses/student.html', {'students':studentdetails})
     
