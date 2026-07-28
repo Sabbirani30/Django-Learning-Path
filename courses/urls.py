@@ -12,5 +12,6 @@ urlpatterns = [
     path('data_analysis/', views.Data_Analysis),
     path('ai/', views.Artificial_Intelligence),
     path('student/', views.Student_Info),
+    path('form/', views.Show_Form),
     
    ]
