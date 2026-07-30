@@ -3,7 +3,7 @@ import email
 from django.forms import forms
 from django.shortcuts import render
 from django.http import HttpResponse
-from . models import Student
+from . models import Student,Info
 from . forms import StudentRegistration
 from django.http import HttpResponseRedirect
 # Create your views here.
@@ -42,22 +42,26 @@ def Show_Form(request):
     if request.method == 'POST':
         form = StudentRegistration(request.POST)
         if form.is_valid():
-            print('first_name : ', form.cleaned_data['name'])
-            print('email : ', form.cleaned_data['email'])
-            print('age : ', form.cleaned_data['age'])
-            print('course : ', form.cleaned_data['course'])
-            print('batch : ', form.cleaned_data['batch'])
-            print('department : ', form.cleaned_data['department'])
-            print('password : ', form.cleaned_data['password'])
-            print('re_password : ', form.cleaned_data['re_password'])
-            print('textarea : ', form.cleaned_data['textarea'])
-            print('payment : ', form.cleaned_data['payment'])
+            First_Name=form.cleaned_data['name']
+            Email=form.cleaned_data['email']
+            Age=form.cleaned_data['age']
+            Course=form.cleaned_data['course']
+            Batch=form.cleaned_data['batch']
+            Department=form.cleaned_data['department']
+            Password=form.cleaned_data['password']
+            Re_password=form.cleaned_data['re_password']
+            Textarea=form.cleaned_data['textarea']
+            Payment=form.cleaned_data['payment']
+
+            django_fourteen = Info(name=First_Name, Email=Email, Age=Age, course=Course, batch=Batch, department=Department, password=Password, re_password=Re_password, textarea=Textarea, payment=Payment)
+            django_fourteen.save()
+
             print("Valid form")
             return HttpResponseRedirect('/success/')
         
     else:
         form = StudentRegistration()
-        form.order = form.order_fields(field_order=['name', 'email', 'age', 'course', 'batch', 'department', 'password', 'textarea', 'payment'])
+        form.order = form.order_fields(field_order=['name', 'email', 'age', 'course', 'batch', 'department', 'password', 're_password', 'textarea', 'payment'])
         print("Execute Get")
 
     return render(request, 'courses/forms.html', {'form': form})
