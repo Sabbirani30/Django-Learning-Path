@@ -1,8 +1,11 @@
+import email
+
 from django.forms import forms
 from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Student
 from . forms import StudentRegistration
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 def Sabbir(request):
@@ -39,13 +42,25 @@ def Show_Form(request):
     if request.method == 'POST':
         form = StudentRegistration(request.POST)
         if form.is_valid():
-            print("form.changed_data")
+            print('first_name : ', form.cleaned_data['name'])
+            print('email : ', form.cleaned_data['email'])
+            print('age : ', form.cleaned_data['age'])
+            print('course : ', form.cleaned_data['course'])
+            print('batch : ', form.cleaned_data['batch'])
+            print('department : ', form.cleaned_data['department'])
+            print('password : ', form.cleaned_data['password'])
+            print('re_password : ', form.cleaned_data['re_password'])
+            print('textarea : ', form.cleaned_data['textarea'])
+            print('payment : ', form.cleaned_data['payment'])
             print("Valid form")
-        else:
-            form = StudentRegistration(auto_id='true')
-            form.order_fields(['name', 'age', 'batch', 'age', 'course', 'department', 'password'])
+            return HttpResponseRedirect('/success/')
+        
     else:
         form = StudentRegistration()
+        form.order = form.order_fields(field_order=['name', 'email', 'age', 'course', 'batch', 'department', 'password', 'textarea', 'payment'])
         print("Execute Get")
 
     return render(request, 'courses/forms.html', {'form': form})
+
+def success(request):
+    return render(request, 'courses/success.html')

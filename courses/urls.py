@@ -13,5 +13,6 @@ urlpatterns = [
     path('ai/', views.Artificial_Intelligence),
     path('student/', views.Student_Info),
     path('form/', views.Show_Form),
+    path('success/', views.success, name='success'),
     
    ]
