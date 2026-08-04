@@ -10,5 +10,6 @@ urlpatterns = [
     path('phy/', views.Physics),
     path('chem/', views.Chemistry),
     path('bd/', views.Big_Data),
+    path('signup/', views.User_Signup),
     
    ]

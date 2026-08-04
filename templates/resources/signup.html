@@ -1,0 +1,10 @@
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for fm in form %}
+        {{ fm.label_tag }} {{ fm.errors|striptags }} {{ fm }}
+        <br> <br>
+        {% endfor %}
+        <input type="submit" value="SignUp">
+    </form>
+</body>
